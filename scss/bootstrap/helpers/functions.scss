@@ -1,0 +1,35 @@
+@function set-text-color($color) {
+	@if (lightness($color) > 49) {
+		@return #000000; // Lighter background, return dark color
+	} @else {
+		@return #ffffff; // Darker background, return light color
+	}
+}
+
+@function set-shadow-color($color) {
+	@if (lightness($color) > 55) {
+		@return #ffffff; // Darker background, return light color
+	} @else {
+		@return #000000; // Lighter background, return dark color
+	}
+}
+
+@function btn_darken($color) {
+	$color2: adjust_hue($color, 5deg);
+	$color2: desaturate($color2, 5%);
+	$color2: darken($color, 5%);
+
+	@return $color2;
+}
+
+@function pastelerise($color) {
+	$red: red($color);
+	$green: green($color);
+	$blue: blue($color);
+
+	// mix white
+	$red: ($red + 255) / 2;
+	$green: ($green + 255) / 2;
+	$blue: ($blue + 255) / 2;
+	@return rgb($red, $green, $blue);
+}

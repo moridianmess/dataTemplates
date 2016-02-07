@@ -1,0 +1,74 @@
+<div class="dataTemplatesHeader" id="{headerId}"></div>
+<div class="dataTemplatesSurround" id="{surroundId}">
+	<div class="dataTemplatesSearch" id="{searchContentId}">
+		<div class="row">
+			<div class="col s12 m9">
+				<input id="{searchInputId}" name="{searchInputId}" placeholder="Search" type="text">
+			</div>
+			<div class="col s12 m3 text-right">
+				<div class="center-btn group-third">
+					<a id="{sortBtnId}" class="dropdown-button waves-effect waves-light btn" data-activates="{sortMenuId}" data-alignment="right">
+						<i class="material-icons">sort</i>
+						<i class="material-icons">expand_more</i>
+					</a>
+
+					<!-- Dropdown Structure -->
+					<ul id="{sortMenuId}" class="dropdown-content">
+					</ul>
+					<a id="{itemsBtnId}" class="dropdown-button waves-effect waves-light btn" data-activates="{itemsMenuId}" data-alignment="right">
+						<i class="material-icons">format_list_numbered</i>
+						<i class="material-icons">expand_more</i>
+					</a>
+
+					<!-- Dropdown Structure -->
+					<ul id="{itemsMenuId}" class="dropdown-content">
+					</ul>
+					<a id="{allBtnId}" class="dataTemplatesAll waves-effect waves-light btn"><i class="material-icons select">lens</i><i class="material-icons deselect">check_circle</i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="{headerSurroundId}" class="dataTemplatesSurroundHeader">
+	</div>
+	<div id="{resultsSurroundId}">
+		<div id="{resultsContentId}" class="dataTemplatesContent">
+		</div>
+	</div>
+	<div id="{footerId}" class="dataTemplatesFooter">
+		<div class="row">
+			<div id="{showingId}" class="col s4 text-left"></div>
+			<div class="col s8 text-right">
+				<div id="{resultsPaginateId}">
+					<ul class="pagination">
+						<li class="paginate_button first">
+							<a href="javascript:;"><i class="material-icons">fast_rewind</i></a>
+						</li>
+						<li class="paginate_button previous">
+							<a href="javascript:;"><i class="material-icons">skip_previous</i></a>
+						</li>
+						<li class="paginate_button">
+							<a id="{pagingBtnId}" class="dropdown-button waves-effect waves-light btn" data-activates="{pagingMenuId}" data-alignment="right">
+								<span id="{pagingTextId}"></span>
+								<i class="material-icons">expand_more</i>
+							</a>
+							<!-- Dropdown Structure -->
+							<ul id="{pagingMenuId}" class="dropdown-content">
+							</ul>
+						</li>
+						<li class="paginate_button next">
+							<a href="javascript:;"><i class="material-icons">skip_next</i></a>
+						</li>
+						<li class="paginate_button last">
+							<a href="javascript:;"><i class="material-icons">fast_forward</i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	$('.dropdown-button').dropdown({
+		constrain_width: false
+	});
+</script>

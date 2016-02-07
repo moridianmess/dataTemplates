@@ -1,0 +1,70 @@
+<div class="dataTemplatesHeader" id="{headerId}"></div>
+<div class="dataTemplatesSurround" id="{surroundId}">
+	<div class="dataTemplatesSearch" id="{searchContentId}">
+		<div class="row">
+			<div class="col-sm-12 col-md-9">
+				<input id="{searchInputId}" class="form-control" name="{searchInputId}" placeholder="Search" type="text">
+			</div>
+			<div class="col-sm-12 col-md-3 text-right">
+				<div class="btn-group">
+					<div class="btn-group">
+						<button id="{sortBtnId}" role="button" type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+							<i class="glyphicon glyphicon-sort-by-alphabet"></i>
+							<i class="glyphicon glyphicon-menu-down"></i>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-right" id="{sortMenuId}" role="menu">
+						</ul>
+					</div>
+					<div class="btn-group">
+						<button id="{itemsBtnId}" role="button" type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+							<i class="glyphicon glyphicon-list"></i>
+							<i class="glyphicon glyphicon-menu-down"></i>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-right" id="{itemsMenuId}" role="menu">
+						</ul>
+					</div>
+					<button type="button" id="{allBtnId}" class="dataTemplatesAll btn btn-default" style=""><i class="glyphicon glyphicon-check"></i><i class="glyphicon glyphicon-checkselect"></i><i class="glyphicon glyphicon-check deselect"></i></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="{headerSurroundId}" class="dataTemplatesSurroundHeader">
+	</div>
+	<div id="{resultsSurroundId}">
+		<div id="{resultsContentId}" class="dataTemplatesContent">
+		</div>
+	</div>
+	<div id="{footerId}" class="dataTemplatesFooter">
+		<div class="row">
+			<div id="{showingId}" class="col-sm-4 text-left"></div>
+			<div class="col-sm-8 text-right">
+				<div id="{resultsPaginateId}">
+					<ul class="pagination">
+						<li class="paginate_button first">
+							<a href="javascript:;"><i class="glyphicon glyphicon-fast-backward"></i></a>
+						</li>
+						<li class="paginate_button previous">
+							<a href="javascript:;"><i class="glyphicon glyphicon-step-backward"></i></a>
+						</li>
+						<li class="paginate_button">
+							<div class="btn-group">
+								<button id="{pagingBtnId}" role="button" type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+									<span id="{pagingTextId}"></span>
+									<i class="glyphicon glyphicon-menu-down"></i>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-right" id="{pagingMenuId}" role="menu">
+								</ul>
+							</div>
+						</li>
+						<li class="paginate_button next">
+							<a href="javascript:;"><i class="glyphicon glyphicon-step-forward"></i></a>
+						</li>
+						<li class="paginate_button last">
+							<a href="javascript:;"><i class="glyphicon glyphicon-fast-forward"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

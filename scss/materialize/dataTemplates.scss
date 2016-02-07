@@ -1,0 +1,548 @@
+@charset "UTF-8";
+
+// Mixins
+// @import "components/prefixer";
+@import "components/mixins";
+@import "components/color";
+
+// Variables;
+@import "components/variables";
+
+@import "helpers/functions";
+@import "helpers/mixins";
+
+.dataTemplatesSurround {
+  padding: 0;
+  width: 100%;
+  display: block;
+  margin: 0 0 10px 0;
+  border-radius: 4px;
+}
+
+.dataTemplates .dataTemplatesHeader + .dataTemplatesSurround {
+  border-radius: 0 0 4px 4px;
+}
+
+.dataTemplatesHeader {
+  @include gradient($primary-color-light, $primary-color, 180deg);
+  border: 1px solid darken($primary-color, 10%);
+  color: set-text-color($primary-color);
+
+  @include box-shadow(0, 1px, 0, 0, rgba(color('grey', 'lighten-2'), 0.4), inset);
+  @include text-shadow($primary-color, 0, 1px, 0);
+
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 4px 4px 0 0;
+  margin: 0;
+  font-size: $h5-fontsize;
+}
+
+.dataTemplatesSurroundHeader {
+  overflow: hidden;
+  @include gradient($primary-color-light, $primary-color, 180deg);
+  border: 1px solid darken($primary-color, 10%);
+  color: set-text-color($primary-color);
+
+  @include box-shadow(0, 1px, 0, 0, rgba(color('grey', 'lighten-2'), 0.4), inset);
+  @include text-shadow($primary-color, 0, 1px, 0);
+}
+
+.dataTemplatesSearch {
+  width: 100%;
+  padding: 5px 5px;
+  margin: 0;
+
+  @include box-shadow(0, 1px, 0, 0, rgba(color('grey', 'lighten-2'), 0.4), inset);
+  @include gradient($primary-color-light, $primary-color, 180deg);
+  border: 1px solid darken($primary-color, 10%);
+  color: set-text-color($primary-color);
+}
+
+.dataTemplates .dataTemplatesSurround > .dataTemplatesSearch {
+  border-radius: 4px 4px 0 0;
+}
+
+.dataTemplates .dataTemplatesHeader + .dataTemplatesSurround > .dataTemplatesSearch {
+  border-radius: 0;
+  @include gradient(color('grey', 'lighten-5'), color('grey', 'lighten-2'), 180deg);
+  border: 1px solid color('grey', 'lighten-1');
+  @include box-shadow(0, 2px, 9px, 0, rgba(color('grey', 'base'), 0.1), inset);
+}
+
+.dataTemplatesSearch input[type="text"] {
+  width: 100%;
+  margin: 0;
+  color: color('grey', 'darken-1');
+}
+
+.dataTemplates ul.dropdown-content[data-alignment="right"] {
+  right: 5px;
+}
+
+.dataTemplates ul.dropdown-content li {
+  display: block;
+  position: relative;
+}
+
+.dataTemplates ul.dropdown-content li a {
+  width: 100%;
+  display: block;
+  white-space: normal;
+}
+
+.dataTemplates ul.dropdown-content li a span {
+  display: inline-block;
+}
+
+.dataTemplates ul.dropdown-content li a i {
+  float: right;
+  display: none;
+  margin: 2px 5px 0 5px;
+}
+
+.dataTemplatesAll i {
+  display: none;
+}
+
+.dataTemplates input[type="checkbox"][style*="display: none"] + label {
+  display: none;
+}
+
+.dataTemplatesAll.select i.select,
+.dataTemplatesAll.deselect i.deselect,
+.dataTemplates ul.dropdown-content li.selected.asc a i.asc,
+.dataTemplates ul.dropdown-content li.selected.desc a i.desc,
+.dataTemplates ul.dropdown-content li.selected a i.selected{
+  display: block;
+}
+
+.dataTemplatesSearch .btn,
+.dataTemplatesFooter .btn {
+  background-color: color('grey', 'lighten-2');
+  color: $primary-color;
+  font-size: 1rem;
+  padding: 0 5px;
+}
+
+.dataTemplatesSearch .btn:hover,
+.dataTemplatesFooter .btn:hover  {
+  background-color: color('grey', 'base');
+  color: $secondary-color;
+  font-size: 1rem;
+}
+
+.dataTemplates ul.pagination {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.dataTemplates ul.pagination > li {
+  display: inline-block;
+}
+
+.dataTemplates li.paginate_button .advancedSelect {
+  position: relative;
+  float: left;
+}
+
+.dataTemplates li.paginate_button .advancedSelect .btn {
+  display: inline-block;
+  margin: 0;
+  border-radius: 0;
+  padding: 6px 25px 6px 8px;
+}
+
+.dataTemplates ul.pagination .dropdown-content li {
+  display: block !important;
+  position: relative !important;
+}
+
+.dataTemplates ul.pagination .dropdown-content li i,
+.dataTemplates .dropdown-button i {
+  font-size: 1rem;
+}
+
+.dataTemplatesHeaderSurround {
+  overflow: hidden;
+}
+
+.dataTemplatesResultsSurround {
+  overflow: hidden;
+}
+
+.dataTemplates .dataTemplatesHead .cols {
+  display: inline-block;
+  padding: 6px 8px;
+}
+
+.dataTemplates .dataTemplatesSurroundHeader .cols,
+.dataTemplates .dataTemplatesContent .cols {
+  display: inline-block;
+  padding: 6px 8px;
+}
+
+.dataTemplatesContentSurround {
+
+}
+
+.dataTemplatesEmptyContent {
+  width: 100;
+  text-align: center;
+  padding: 20px;
+}
+
+.dataTemplatesContent,
+.dataTemplatesContent.row {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid color('grey', 'lighten-1');
+  border-top: none;
+  border-bottom: none;
+}
+
+.dataTemplatesSurroundHeader .row,
+.dataTemplatesContent .row,
+.dataTemplatesSearch .row,
+.dataTemplatesFooter .row {
+  margin: 0;
+}
+
+.dataTemplatesContent .row:nth-child(even) .row-xs-height {
+  background-color: color('grey', 'lighten-2');
+}
+
+.dataTemplatesContent .row:nth-child(odd) .row-xs-height {
+  background-color: pastelerise($primary-color);
+}
+
+.dataTemplatesContent .row-xs-height:hover {
+  cursor: pointer;
+}
+
+.dataTemplatesContent .row:nth-child(even) .row-xs-height:hover {
+  background-color: darken(color('grey', 'lighten-2'), 10%);
+}
+
+.dataTemplatesContent .row:nth-child(odd) .row-xs-height:hover {
+  background-color: darken(pastelerise($primary-color), 10%);
+}
+
+.dataTemplatesContent .row.bg-danger:nth-child(even) .row-xs-height {
+  background-color: pastelerise(color('red', 'base'));
+}
+
+.dataTemplatesContent .row.bg-danger:nth-child(odd) .row-xs-height {
+  background-color: color('red', 'base');
+}
+
+.dataTemplatesContent .row.bg-danger:nth-child(even) .row-xs-height:hover {
+  background-color: darken(pastelerise(color('red', 'base')), 10%);
+}
+
+.dataTemplatesContent .row.bg-danger:nth-child(odd) .row-xs-height:hover {
+  background-color: darken(color('red', 'base'), 10%);
+}
+
+.dataTemplatesContent .row.bg-warning:nth-child(even) .row-xs-height {
+  background-color: pastelerise(color('orange', 'base'));
+}
+
+.dataTemplatesContent .row.bg-warning:nth-child(odd) .row-xs-height {
+  background-color: color('orange', 'base');
+}
+
+.dataTemplatesContent .row.bg-warning:nth-child(even) .row-xs-height:hover {
+  background-color: darken(pastelerise(color('orange', 'base')), 10%);
+}
+
+.dataTemplatesContent .row.bg-warning:nth-child(odd) .row-xs-height:hover {
+  background-color: darken(color('orange', 'base'), 10%);
+}
+
+.dataTemplatesContent .row.bg-success:nth-child(even) .row-xs-height {
+  background-color: pastelerise(color('green', 'base'));
+}
+
+.dataTemplatesContent .row.bg-success:nth-child(odd) .row-xs-height {
+  background-color: color('green', 'base');
+}
+
+.dataTemplatesContent .row.bg-success:nth-child(even) .row-xs-height:hover {
+  background-color: darken(pastelerise(color('green', 'base')), 10%);
+}
+
+.dataTemplatesContent .row.bg-success:nth-child(odd) .row-xs-height:hover {
+  background-color: darken(color('green', 'base'), 10%);
+}
+
+.row-xs-height {
+  display: table;
+  width: 100%;
+  padding: 0 3px;
+}
+
+.row .col.col-xs-height {
+  display: table-cell;
+  float: none !important;
+  vertical-align:middle;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.dataTemplatesSurroundHeader .row-xs-height div.col,
+.dataTemplatesContent .row-xs-height div.col {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 1em;
+}
+
+.dataTemplatesSurroundHeader .row-xs-height:hover div.col,
+.dataTemplatesContent .row-xs-height:hover div.col {
+  text-overflow: initial;
+  white-space: normal;
+  overflow: visible;
+}
+
+.dataTemplatesContent .row-xs-height a:hover {
+  text-decoration: none !important;
+}
+
+.dataTemplatesContent .row a .row-xs-height .col-xs-height,
+.dataTemplatesContent .row a:hover .row-xs-height .col-xs-height {
+  color: color('grey', 'darken-1');
+  text-decoration: none !important;
+}
+
+.dataTemplatesFooter {
+  margin: 0;
+  padding: 10px 20px;
+
+  @include gradient(color('grey', 'lighten-5'), color('grey', 'lighten-2'), 180deg);
+  border: 1px solid color('grey', 'lighten-1');
+  color: set-text-color(color('grey', 'lighten-2'));
+  @include box-shadow(0, 2px, 9px, 0, rgba(color('grey', 'base'), 0.1), inset);
+  @include text-shadow(color('grey', 'lighten-2'), 0, 1px, 0);
+
+  border-radius: 0 0 4px 4px;
+}
+
+.dataTemplatesFooter .col.s4 {
+  line-height: 40px;
+}
+
+.dataTemplatesFooter .col.s8 {
+  text-align: right;
+}
+
+.dataTemplatesFooter ul.pagination .advancedSelect .btn {
+  background: none;
+  background-image: none;
+  background-color: color('grey', 'lighten-2');
+  border: 1px solid color('grey', 'lighten-1');
+  border-left-width: 0px;
+}
+
+.dataTemplatesSearch .center-btn {
+  width: 100%;
+}
+
+.dataTemplatesSearch .center-btn > .dropdown-button {
+  width: 46%;
+}
+
+.dataTemplatesSearch .center-btn .btn {
+  width: 46%;
+  margin: 0;
+}
+
+.dataTemplatesSearch .center-btn.group-third > .dropdown-button {
+  width:30%;
+}
+
+.dataTemplatesSearch .center-btn.group-third .btn {
+  width:30%;
+}
+
+.dataTemplatesSearch .center-btn > .dropdown-button .btn {
+  width: 100%;
+}
+
+.col.xs1-5 {
+  width: 12.499999995%;
+}
+
+@media only screen and (max-width : 340px) {
+  .dataTemplates ul.pagination > li,
+  .dataTemplates ul.pagination>li>a,
+  .dataTemplates li.paginate_button .advancedSelect {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    float: none;
+    border-top-width: 0;
+  }
+
+  .dataTemplatesFooter ul.pagination .advancedSelect .btn {
+    border-left-width: 1px;
+    border-top-width: 0;
+    text-align: center;
+    padding: 6px 25px 6px 8px;
+  }
+
+  .dataTemplates ul.pagination>li:first-child>a,
+  .dataTemplates ul.pagination>li:first-child>span {
+    margin-left: 0;
+    border-radius: 4px  4px 0 0;
+    border-top-width: 1px;
+  }
+
+  .dataTemplates ul.pagination>li:last-child>a,
+  .dataTemplates ul.pagination>li:last-child>span {
+    margin-left: 0;
+    border-radius: 0 0 4px  4px;
+  }
+
+  .dataTemplatesContent .row div.col {
+    text-overflow: initial;
+    white-space: normal;
+    overflow: visible;
+    max-width: 100%;
+  }
+}
+
+@media #{$medium-and-up} {
+  .m1-5 {
+    width: unquote((100 / (12 / 1.5)) + "%");
+    margin-left: 0;
+  }
+
+  .offset-m1-5 {
+    margin-left: unquote((100 / (12 / 1.5)) + "%");
+  }
+
+  .pull-m1-5 {
+    right: unquote((100 / (12 / 1.5)) + "%");
+  }
+
+  .push-m1-5 {
+    left: unquote((100 / (12 / 1.5)) + "%");
+  }
+}
+
+@media only screen and (max-width : 767px) {
+
+  .dataTemplatesFooter .col.s4, .dataTemplatesFooter .col.s8 {
+    text-align: center;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  .dataTemplatesHead {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .dataTemplatesContent .row {
+    display: block;
+    border: 1px solid color('grey', 'lighten-4')er;
+  }
+
+  .dataTemplatesContent .row .col-xs-height:before {
+    content: attr(data-title);
+    font-weight: bold;
+    display: block;
+  }
+
+  .dataTemplatesContent .row .col-xs-height {
+    display: block;
+    //width: auto;
+    float: left !important;
+  }
+
+  .dataTemplatesContent .row .col-xs-height.col-btn {
+    width: 100%;
+  }
+
+  .dataTemplatesContent .row .col-xs-height.col-btn .btn {
+    width: 100%;
+  }
+
+  .dataTemplatesContent .row .col-xs-height.col-btn:before {
+    display: none;
+  }
+
+  .dataTemplatesContent .row .col-xs-height.col-check {
+    width: auto;
+    position: absolute;
+    right: 10px;
+  }
+
+  .dataTemplatesContent .row .col-xs-height.col-check:before {
+    display: none;
+  }
+
+  .dataTemplatesSearch .center-btn {
+    margin-top: 3px;
+    width: 100%;
+  }
+
+  .dataTemplatesSearch .center-btn > .dropdown-button {
+    margin-top: 0;
+    width: 46%;
+  }
+
+  .dataTemplatesSearch .center-btn.group-third > .dropdown-button {
+    margin-top: 0;
+    width:30%;
+  }
+
+  .dataTemplatesSearch .center-btn .btn {
+    width: 46%;
+  }
+
+  .dataTemplatesSearch .center-btn.group-third .btn {
+    width:30%;
+  }
+
+  .dataTemplatesSearch .center-btn > .dropdown-button .btn {
+    width: 100%;
+  }
+
+  .dataTemplatesContent .row div.col {
+    text-overflow: initial;
+    white-space: normal;
+    overflow: visible;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width : 991px) {
+  .dataTemplatesSearch .center-btn {
+    margin-top: 3px;
+    width: 100%;
+  }
+
+  .dataTemplatesSearch .center-btn > .dropdown-button {
+    margin-top: 0;
+    width: 46%;
+  }
+
+  .dataTemplatesSearch .center-btn .btn {
+    width: 46%;
+  }
+
+  .dataTemplatesSearch .center-btn.group-third > .dropdown-button {
+    margin-top: 0;
+    width:30%;
+  }
+
+  .dataTemplatesSearch .center-btn.group-third .btn {
+    width:30%;
+  }
+
+  .dataTemplatesSearch .center-btn > .dropdown-button .btn {
+    width: 100%;
+  }
+}

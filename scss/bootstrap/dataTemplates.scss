@@ -1,0 +1,527 @@
+@charset "UTF-8";
+
+// Core variables and mixins
+@import "bootstrap/variables";
+@import "helpers/functions";
+@import "helpers/mixins";
+
+.dataTemplatesSurround {
+	padding: 0;
+	width: 100%;
+	display: block;
+	margin: 0 0 10px 0;
+	border-radius: $border-radius-base;
+}
+
+.dataTemplates .dataTemplatesHeader + .dataTemplatesSurround {
+	border-radius: 0 0 $border-radius-base $border-radius-base;
+}
+
+.dataTemplatesHeader {
+	@include gradient(lighten($brand-primary, 20%), $brand-primary, 180deg);
+	border: 1px solid darken($brand-primary, 10%);
+	color: set-text-color($brand-primary);
+
+	@include box-shadow(0, 1px, 0, 0, rgba($gray-light, 0.4), inset);
+	@include text-shadow($brand-primary, 0, 1px, 0);
+
+	font-weight: bold;
+	padding: 10px 20px;
+	border-radius: $border-radius-base $border-radius-base 0 0;
+	margin: 0;
+	font-size: $font-size-h5;
+}
+
+.dataTemplatesSurroundHeader {
+	overflow: hidden;
+  @include gradient(lighten($brand-primary, 20%), $brand-primary, 180deg);
+  border: 1px solid darken($brand-primary, 10%);
+  color: set-text-color($brand-primary);
+
+  @include box-shadow(0, 1px, 0, 0, rgba($gray-light, 0.4), inset);
+  @include text-shadow($brand-primary, 0, 1px, 0);
+}
+
+.dataTemplatesSearch {
+	width: 100%;
+	padding: 5px 5px;
+	margin: 0;
+
+	@include box-shadow(0, 1px, 0, 0, rgba($gray-light, 0.4), inset);
+	@include gradient(lighten($brand-primary, 20%), $brand-primary, 180deg);
+	border: 1px solid darken($brand-primary, 10%);
+	color: set-text-color($brand-primary);
+}
+
+.dataTemplates .dataTemplatesSurround > .dataTemplatesSearch {
+	border-radius: $border-radius-base $border-radius-base 0 0;
+}
+
+.dataTemplates .dataTemplatesHeader + .dataTemplatesSurround > .dataTemplatesSearch {
+	border-radius: 0;
+	@include gradient($gray-lighter, $gray-light, 180deg);
+	border: 1px solid $gray-light;
+	@include box-shadow(0, 2px, 9px, 0, rgba($gray, 0.1), inset);
+}
+
+.dataTemplatesSearch input {
+	width: 100%;
+	border-radius: $border-radius-base;
+	margin: 0;
+	padding: 5px;
+	color: $gray-dark;
+}
+
+.dataTemplates ul.dropdown-menu-right {
+	right: 5px;
+}
+
+.dataTemplates ul.dropdown-menu li {
+	display: block;
+	position: relative;
+}
+
+.dataTemplates ul.dropdown-menu li a {
+	width: 100%;
+	display: block;
+	white-space: normal;
+}
+
+.dataTemplates ul.dropdown-menu li a span {
+	display: inline-block;
+}
+
+.dataTemplates ul.dropdown-menu li a i {
+	float: right;
+	display: none;
+	margin: 2px 5px 0 5px;
+}
+
+.dataTemplatesAll i {
+  display: none;
+}
+
+.dataTemplatesAll.select i.select,
+.dataTemplatesAll.deselect i.deselect,
+.dataTemplates ul.dropdown-menu li.selected.asc a i.asc,
+.dataTemplates ul.dropdown-menu li.selected.desc a i.desc,
+.dataTemplates ul.dropdown-menu li.selected a i.selected{
+  display: block;
+}
+
+.dataTemplatesSearch .btn,
+.dataTemplatesFooter .btn {
+	background-color: $gray-lighter;
+	color: $brand-primary;
+}
+
+.dataTemplates ul.pagination {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.dataTemplates ul.pagination > li {
+	display: inline-block;
+    vertical-align: top;
+}
+
+.dataTemplates li.paginate_button .advancedSelect {
+	position: relative;
+	float: left;
+}
+
+.dataTemplates li.paginate_button .advancedSelect .btn {
+	display: inline-block;
+	margin: 0;
+	border-radius: 0;
+	padding: 6px 25px 6px 8px;
+}
+
+.dataTemplates ul.pagination .dropdown-menu li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.dataTemplateHead {
+	display: none;
+}
+
+.dataTemplates .dataTemplateHead {
+	@include gradient(lighten($brand-info, 20%), $brand-info, 180deg);
+	border: 1px solid darken($brand-info, 10%);
+	color: set-text-color($brand-info);
+
+	@include box-shadow(0, 1px, 0, 0, rgba($gray-light, 0.4), inset);
+	@include text-shadow($brand-info, 0, 1px, 0);
+
+	display: block;
+	width: auto;
+	overflow: hidden;
+}
+
+.dataTemplatesHeaderSurround {
+	overflow: hidden;
+}
+
+.dataTemplatesResultsSurround {
+	overflow: hidden;
+}
+
+.dataTemplates .dataTemplateHead .cols {
+	display: inline-block;
+	padding: 6px 8px;
+}
+
+.dataTemplates .dataTemplatesSurroundHeader .cols,
+.dataTemplates .dataTemplatesContent .cols {
+	display: inline-block;
+	padding: 6px 8px;
+}
+
+.dataTemplatesContentSurround {
+
+}
+
+.dataTemplatesEmptyContent {
+	width: 100;
+	text-align: center;
+	padding: 20px;
+}
+
+.dataTemplatesContent {
+	overflow: hidden;
+	margin: 0;
+	border: 1px solid $gray-light;
+	border-top: none;
+	border-bottom: none;
+}
+
+.dataTemplatesSurroundHeader .row,
+.dataTemplatesContent .row,
+.dataTemplatesSearch .row,
+.dataTemplatesFooter .row {
+  margin: 0;
+}
+
+.dataTemplatesContent .row:nth-child(even) .row-xs-height {
+	background-color: $gray-lighter;
+}
+
+.dataTemplatesContent .row:nth-child(odd) .row-xs-height {
+	background-color: pastelerise($brand-primary);
+}
+
+.dataTemplatesContent .row-xs-height:hover {
+	cursor: pointer;
+}
+
+.dataTemplatesContent .row:nth-child(even) .row-xs-height:hover {
+	background-color: darken($gray-lighter, 10%);
+}
+
+.dataTemplatesContent .row:nth-child(odd) .row-xs-height:hover {
+	background-color: darken(pastelerise($brand-primary), 10%);
+}
+
+.dataTemplatesContent .row.bg-danger:nth-child(even) .row-xs-height {
+	background-color: pastelerise($brand-danger);
+}
+
+.dataTemplatesContent .row.bg-danger:nth-child(odd) .row-xs-height {
+	background-color: $brand-danger;
+}
+
+.dataTemplatesContent .row.bg-danger:nth-child(even) .row-xs-height:hover {
+	background-color: darken(pastelerise($brand-danger), 10%);
+}
+
+.dataTemplatesContent .row.bg-danger:nth-child(odd) .row-xs-height:hover {
+	background-color: darken($brand-danger, 10%);
+}
+
+.dataTemplatesContent .row.bg-warning:nth-child(even) .row-xs-height {
+	background-color: pastelerise($brand-warning);
+}
+
+.dataTemplatesContent .row.bg-warning:nth-child(odd) .row-xs-height {
+	background-color: $brand-warning;
+}
+
+.dataTemplatesContent .row.bg-warning:nth-child(even) .row-xs-height:hover {
+	background-color: darken(pastelerise($brand-warning), 10%);
+}
+
+.dataTemplatesContent .row.bg-warning:nth-child(odd) .row-xs-height:hover {
+	background-color: darken($brand-warning, 10%);
+}
+
+.dataTemplatesContent .row.bg-success:nth-child(even) .row-xs-height {
+	background-color: pastelerise($brand-success);
+}
+
+.dataTemplatesContent .row.bg-success:nth-child(odd) .row-xs-height {
+	background-color: $brand-success;
+}
+
+.dataTemplatesContent .row.bg-success:nth-child(even) .row-xs-height:hover {
+	background-color: darken(pastelerise($brand-success), 10%);
+}
+
+.dataTemplatesContent .row.bg-success:nth-child(odd) .row-xs-height:hover {
+	background-color: darken($brand-success, 10%);
+}
+
+.row-xs-height {
+	display: table;
+	width: 100%;
+	padding: 0 3px;
+}
+
+.col-xs-height {
+	display: table-cell;
+	float: none !important;
+	vertical-align:middle;
+	padding: 5px 6px;
+}
+
+.dataTemplatesSurroundHeader .row div[class*="col-"],
+.dataTemplatesContent .row-xs-height div[class*="col-"] {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	max-width: 1em;
+}
+
+.dataTemplatesSurroundHeader .row:hover div[class*="col-"],
+.dataTemplatesContent .row-xs-height:hover div[class*="col-"] {
+	text-overflow: initial;
+	white-space: normal;
+	overflow: visible;
+}
+
+.dataTemplatesContent .row-xs-height a:hover {
+	text-decoration: none !important;
+}
+
+.dataTemplatesContent .row a .row-xs-height .col-xs-height,
+.dataTemplatesContent .row a:hover .row-xs-height .col-xs-height {
+	color: $gray-dark;
+	text-decoration: none !important;
+}
+
+.dataTemplatesFooter {
+	margin: 0;
+	padding: 20px;
+
+	@include gradient($gray-lighter, $gray-light, 180deg);
+	border: 1px solid $gray-light;
+	color: set-text-color($gray-light);
+	@include box-shadow(0, 2px, 9px, 0, rgba($gray, 0.1), inset);
+	@include text-shadow($gray-light, 0, 1px, 0);
+
+	border-radius: 0 0 $border-radius-base $border-radius-base;
+}
+
+.dataTemplatesFooter .col-sm-4 {
+	line-height: 40px;
+}
+
+.dataTemplatesFooter .col-sm-8 {
+	text-align: right;
+}
+
+.dataTemplatesFooter ul.pagination .advancedSelect .btn {
+	background: none;
+	background-image: none;
+	background-color: $gray-light;
+	border: 1px solid $gray-light;
+	border-left-width: 0px;
+}
+
+.dataTemplatesSearch .btn-group {
+	width: 100%;
+}
+
+.dataTemplatesSearch .btn-group > .btn-group {
+	width: 50%;
+}
+
+.dataTemplatesSearch .btn-group .btn {
+	width: 50%;
+}
+
+.dataTemplatesSearch .btn-group.group-third > .btn-group {
+	width: 33.33%;
+}
+
+.dataTemplatesSearch .btn-group.group-third .btn {
+	width: 33.33%;
+}
+
+.dataTemplatesSearch .btn-group > .btn-group .btn {
+	width: 100%;
+}
+
+.col-xs-1-5 {
+  float: left;
+  width: 12.499999995%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media only screen and (max-width : 340px) {
+	.dataTemplates ul.pagination > li,
+	.dataTemplates ul.pagination>li>a,
+	.dataTemplates li.paginate_button .advancedSelect {
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		float: none;
+		border-top-width: 0;
+	}
+
+	.dataTemplatesFooter ul.pagination .advancedSelect .btn {
+		border-left-width: 1px;
+		border-top-width: 0;
+		text-align: center;
+		padding: 6px 25px 6px 8px;
+	}
+
+	.dataTemplates ul.pagination>li:first-child>a,
+	.dataTemplates ul.pagination>li:first-child>span {
+		margin-left: 0;
+		border-radius: $border-radius-base $border-radius-base 0 0;
+		border-top-width: 1px;
+	}
+
+	.dataTemplates ul.pagination>li:last-child>a,
+	.dataTemplates ul.pagination>li:last-child>span {
+		margin-left: 0;
+		border-radius: 0 0 $border-radius-base $border-radius-base;
+	}
+
+	.dataTemplatesContent .row div[class*="col-"] {
+		text-overflow: initial;
+		white-space: normal;
+		overflow: visible;
+		max-width: 100%;
+	}
+}
+
+@media only screen and (max-width : 767px) {
+
+	.dataTemplatesFooter .col-sm-4, .dataTemplatesFooter .col-sm-8 {
+		text-align: center;
+	}
+
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.dataTemplateHead {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	.dataTemplatesContent .row {
+		display: block;
+		border: 1px solid $gray-lighter;
+	}
+
+	.dataTemplatesContent .row .col-xs-height:before {
+		content: attr(data-title);
+		font-weight: bold;
+		display: block;
+	}
+
+	.dataTemplatesContent .row .col-xs-height {
+		display: block;
+		//width: auto;
+		float: left !important;
+	}
+
+	.dataTemplatesContent .row .col-xs-height.col-btn {
+		width: 100%;
+	}
+
+	.dataTemplatesContent .row .col-xs-height.col-btn .btn {
+		width: 100%;
+	}
+
+	.dataTemplatesContent .row .col-xs-height.col-btn:before {
+		display: none;
+	}
+
+	.dataTemplatesContent .row .col-xs-height.col-check {
+		width: auto;
+		position: absolute;
+		right: 10px;
+	}
+
+	.dataTemplatesContent .row .col-xs-height.col-check:before {
+		display: none;
+	}
+
+	.dataTemplatesSearch .btn-group {
+		margin-top: 3px;
+		width: 100%;
+	}
+
+	.dataTemplatesSearch .btn-group > .btn-group {
+		margin-top: 0;
+		width: 50%;
+	}
+
+	.dataTemplatesSearch .btn-group.group-third > .btn-group {
+		margin-top: 0;
+		width: 33.33%;
+	}
+
+	.dataTemplatesSearch .btn-group .btn {
+		width: 50%;
+	}
+
+	.dataTemplatesSearch .btn-group.group-third .btn {
+		width: 33.33%;
+	}
+
+	.dataTemplatesSearch .btn-group > .btn-group .btn {
+		width: 100%;
+	}
+
+	.dataTemplatesContent .row div[class*="col-"] {
+		text-overflow: initial;
+		white-space: normal;
+		overflow: visible;
+		max-width: 100%;
+	}
+}
+
+@media only screen and (max-width : 991px) {
+	.dataTemplatesSearch .btn-group {
+		margin-top: 3px;
+		width: 100%;
+	}
+
+	.dataTemplatesSearch .btn-group > .btn-group {
+		margin-top: 0;
+		width: 50%;
+	}
+
+	.dataTemplatesSearch .btn-group .btn {
+		width: 50%;
+	}
+
+	.dataTemplatesSearch .btn-group.group-third > .btn-group {
+		margin-top: 0;
+		width: 33.33%;
+	}
+
+	.dataTemplatesSearch .btn-group.group-third .btn {
+		width: 33.33%;
+	}
+
+	.dataTemplatesSearch .btn-group > .btn-group .btn {
+		width: 100%;
+	}
+}

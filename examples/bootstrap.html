@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="../css/bootstrap/dataTemplates.css"  media="screen,projection"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="/js/template.js"></script>
+	<script src="/js/jQuery.ajaxExtend.js"></script>
+	<script src="/js/jQuery.dataTemplates.js"></script>
+	<script>
+		$(document).on('ready', function(){
+			ajaxExtend.options.theme = "bootstrap";
+			ajaxExtend.options.templateDir = "/examples/templates/ajaxExtend/";
+			/// To fix Bootstrap rounded corners issue
+			$('#dt1').on('buildInterface', function(e, self){
+				var options = self.options;
+				if (options.theme == 'bootstrap') {
+					if (!options.multiSelect) {
+						if (options.pageList.length < 2 || !options.paging) {
+							$('#' + options.element.attr('id') + 'SortButton').unwrap();
+							$('#' + options.element.attr('id') + 'ItemsButton').parent().unwrap();
+						}
+						if (!options.sorting) {
+							$('#' + options.element.attr('id') + 'ItemsButton').unwrap();
+							$('#' + options.element.attr('id') + 'SortButton').parent().unwrap();
+						}
+						$('#' + options.element.attr('id') + 'All').remove();
+					}
+
+					if (options.pageList.length < 2 || !options.paging) {
+						$('#' + options.element.attr('id') + 'ItemsButton').parent().remove();
+					}
+
+					if (!options.sorting) {
+						$('#' + options.element.attr('id') + 'SortButton').parent().remove();
+					}
+				}
+			});
+
+			$('#dt1').dataTemplates({
+				"ajax": {
+					"optionsUrl": "templates/json/dataTemplatesOptions.json",
+					"url": "/controllers/dataTemplates.php?func=search",
+					"type": "POST"
+				},
+				theme: "bootstrap",
+				paging: true,
+				templateDir: "templates/"
+			})
+		});
+	</script>
+</head>
+
+<body>
+	<div id="dt1" title="Modules" class="dataTemplates">
+
+	</div>
+</body>
+</html>

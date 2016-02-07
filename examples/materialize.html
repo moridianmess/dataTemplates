@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="../css/materialize/dataTemplates.css"  media="screen,projection"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+	<script src="../js/template.js"></script>
+	<script src="../js/jQuery.ajaxExtend.js"></script>
+	<script src="../js/jQuery.dataTemplates.js"></script>
+	<script>
+		$(document).on('ready', function(){
+			ajaxExtend.options.templateDir = "/examples/templates/ajaxExtend/";
+			$('#dt1').dataTemplates({
+				"ajax": {
+					"optionsUrl": "templates/json/dataTemplatesOptions.json",
+					"url": "/controllers/dataTemplates.php?func=search",
+					"type": "POST"
+				},
+				templateDir: "templates/",
+				paging: true
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="dt1" title="Modules" class="dataTemplates">
+
+	</div>
+</body>
+</html>

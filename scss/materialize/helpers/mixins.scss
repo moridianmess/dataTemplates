@@ -1,0 +1,51 @@
+@mixin gradient($start-background, $end-background, $angle, $start-percentage: 0%, $end-percentage: 100%) {
+  background: $start-background; /* Old browsers */
+  background-color: $start-background; /* Old browsers */
+  background: -moz-linear-gradient($angle, $start-background $start-percentage, $end-background $end-percentage);		/* FF3.6+ */
+  background: -webkit-linear-gradient((180 + $angle), $start-background $start-percentage, $end-background $end-percentage);	/* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient((180 + $angle), $start-background $start-percentage, $end-background $end-percentage);			/* Opera 11.10+ */
+  background: -ms-linear-gradient($angle, $start-background $start-percentage, $end-background $end-percentage);		/* IE10+ */
+  background: linear-gradient($angle, $start-background $start-percentage, $end-background $end-percentage);			/* W3C */
+}
+
+@mixin gradient-image($image-url, $start-background, $end-background, $angle, $start-percentage: 0%, $end-percentage: 100%) {
+  background-image: $image-url;
+  background: -moz-linear-gradient($angle, $start-background $start-percentage, $end-background $end-percentage), $image-url;		/* FF3.6+ */
+  background: -webkit-linear-gradient($angle, $start-background $start-percentage, $end-background $end-percentage), $image-url;	/* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient($angle, $start-background $start-percentage, $end-background $end-percentage), $image-url;			/* Opera 11.10+ */
+  background: -ms-linear-gradient($angle, $start-background $start-percentage, $end-background $end-percentage), $image-url;		/* IE10+ */
+  background: linear-gradient($angle, $start-background $start-percentage, $end-background $end-percentage), $image-url;			/* W3C */
+}
+
+@mixin box-shadow($h-shadow: 0, $v-shadow: 0, $blur: 0, $spread: 0, $color: '#000', $inset: 'none', $h-shadow2: 0, $v-shadow2: 0, $blur2: 0, $spread2: 0, $color2: '#000') {
+
+  @if $h_shadow2 != 0 or $v_shadow2 != 0 or $blur2 != 0 or $spread2 != 0 {
+    @if $inset == 'none' {
+      box-shadow: $h-shadow $v-shadow $blur $spread $color; /* W3C */
+      -moz-box-shadow: $h-shadow $v-shadow $blur $spread $color; /* FF3.6+ */
+      -webkit-box-shadow: $h-shadow $v-shadow $blur $spread $color; /* Chrome10+,Safari5.1+ */
+      -o-box-shadow: $h-shadow $v-shadow $blur $spread $color; /* Opera 11.10+ */
+    } @else {
+      box-shadow: $h-shadow $v-shadow $blur $spread $color $inset, $h_shadow2 $v_shadow2 $blur2 $spread2 $color2; /* W3C */
+      -moz-box-shadow: $h-shadow $v-shadow $blur $spread $color $inset, $h_shadow2 $v_shadow2 $blur2 $spread2 $color2; /* FF3.6+ */
+      -webkit-box-shadow: $h-shadow $v-shadow $blur $spread $color $inset, $h_shadow2 $v_shadow2 $blur2 $spread2 $color2; /* Chrome10+,Safari5.1+ */
+      -o-box-shadow: $h-shadow $v-shadow $blur $spread $color $inset, $h_shadow2 $v_shadow2 $blur2 $spread2 $color2; /* Opera 11.10+ */
+    }
+  }@else {
+    @if $inset == 'none' {
+      box-shadow: $h-shadow $v-shadow $blur $spread $color; /* W3C */
+      -moz-box-shadow: $h-shadow $v-shadow $blur $spread $color; /* FF3.6+ */
+      -webkit-box-shadow: $h-shadow $v-shadow $blur $spread $color; /* Chrome10+,Safari5.1+ */
+      -o-box-shadow: $h-shadow $v-shadow $blur $spread $color; /* Opera 11.10+ */
+    } @else {
+      box-shadow: $h-shadow $v-shadow $blur $spread $color $inset; /* W3C */
+      -moz-box-shadow: $h-shadow $v-shadow $blur $spread $color $inset; /* FF3.6+ */
+      -webkit-box-shadow: $h-shadow $v-shadow $blur $spread $color $inset; /* Chrome10+,Safari5.1+ */
+      -o-box-shadow: $h-shadow $v-shadow $blur $spread $color $inset; /* Opera 11.10+ */
+    }
+  }
+}
+
+@mixin text-shadow($bg-color, $offset-x: 0, $offset-y: 0, $blur: 0, $opacity: 1) {
+  text-shadow: $offset-x $offset-y $blur rgba(set-shadow-color($bg-color), $opacity);
+}
