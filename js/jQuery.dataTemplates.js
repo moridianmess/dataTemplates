@@ -213,8 +213,8 @@
 						self.search();
 					}
 					self.element.trigger('_create');
-					return self;
 					options.building = false;
+					return self;
 				});
 			});
 		},
