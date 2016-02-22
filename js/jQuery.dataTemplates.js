@@ -752,8 +752,8 @@
 				});
 
 				if(!$.isEmptyObject(options.ajax.extraData)){
-					$.each(options.ajax.extraData, function(key, value) {
-						if(typeof value != 'string') {
+					$.each( options.ajax.extraData, function(key, value) {
+						if( typeof value != 'string' && value !== undefined ) {
 							if (value.length) {
 								value = value.val();
 							}
@@ -1263,7 +1263,7 @@
 		}
 	};
 
-	$.fn[pluginName].version = "0.7.2";
+	$.fn[pluginName].version = "0.7.3";
 	$.fn[pluginName].author = "Marc Evans (moridiweb)";
 
 });
